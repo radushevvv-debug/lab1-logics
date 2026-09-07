@@ -8,6 +8,7 @@ int main(void) {
     
     int n;
     int *arr;
+    int i;
     
     printf("Task 3: Динамический массив произвольного размера\n");
     printf("Введите размер массива: ");
@@ -20,7 +21,17 @@ int main(void) {
         return 1;
     }
     
-    printf("Память выделена: %d элементов\n", n);
+    printf("Введите %d элементов массива:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("Элемент [%d]: ", i);
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("Введенный массив: ");
+    for (i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
 
     return 0;
 }
