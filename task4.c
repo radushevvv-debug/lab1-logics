@@ -13,6 +13,7 @@ int main(void) {
     int rows = 3;
     int cols = 4;
     int i, j;
+    int sum;
     
     printf("Task 4: Сумма элементов в столбцах\n");
     printf("Двумерный массив:\n");
@@ -21,6 +22,15 @@ int main(void) {
             printf("%4d ", arr[i][j]);
         }
         printf("\n");
+    }
+    
+    printf("\nСуммы по столбцам:\n");
+    for (j = 0; j < cols; j++) {
+        sum = 0;
+        for (i = 0; i < rows; i++) {
+            sum += arr[i][j];
+        }
+        printf("Столбец [%d]: %d\n", j, sum);
     }
     
     return 0;
