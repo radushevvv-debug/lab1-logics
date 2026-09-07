@@ -14,6 +14,11 @@ int main(void) {
     printf("Введите размер массива: ");
     scanf("%d", &n);
     
+    if (n <= 0) {
+        printf("Ошибка: размер должен быть положительным\n");
+        return 1;
+    }
+    
     arr = (int*)malloc(n * sizeof(int));
     
     if (arr == NULL) {
@@ -32,6 +37,8 @@ int main(void) {
         printf("%d ", arr[i]);
     }
     printf("\n");
-
+    
+    free(arr);
+    
     return 0;
 }
