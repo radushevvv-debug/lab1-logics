@@ -1,6 +1,9 @@
 ﻿#include <stdio.h>
+#include <windows.h>
 
 int main(void) {
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
     int arr[] = {34, -5, 89, 12, 67, 0, 91, 23, 8, 56};
     int n = sizeof(arr) / sizeof(arr[0]);
     int i;
