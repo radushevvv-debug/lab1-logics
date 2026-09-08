@@ -15,6 +15,8 @@ int main(void) {
     
     struct student stud[3];
     int i;
+    char search[20];
+    int found = 0;
     
     printf("Task 5: Поиск структуры student по параметрам\n");
     
@@ -30,7 +32,24 @@ int main(void) {
         scanf("%d", &stud[i].Nomzach);
     }
     
-    printf("\nВведено 3 студента.\n");
+    printf("\nВведите фамилию для поиска: ");
+    scanf("%s", search);
+    
+    for (i = 0; i < 3; i++) {
+        if (strcmp(stud[i].famil, search) == 0) {
+            printf("\nНайдена запись:\n");
+            printf("Фамилия: %s\n", stud[i].famil);
+            printf("Имя: %s\n", stud[i].name);
+            printf("Факультет: %s\n", stud[i].facult);
+            printf("Номер зачетки: %d\n", stud[i].Nomzach);
+            found = 1;
+            break;
+        }
+    }
+    
+    if (!found) {
+        printf("Студент с фамилией '%s' не найден.\n", search);
+    }
     
     return 0;
 }
